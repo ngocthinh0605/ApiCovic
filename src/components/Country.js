@@ -1,4 +1,4 @@
-
+import { Bar, Doughnut } from "react-chartjs-2";
 const Country = ({country}) => {
     const {Country,
         NewConfirmed,
@@ -9,16 +9,98 @@ const Country = ({country}) => {
         TotalRecovered,
         Date} = country;
     return (
-        <div>
-            <h3 style={{color: 'red'}}>Name: {Country}</h3>
-            <h4>NewConfirmed: {NewConfirmed}</h4>
-            <h4>TotalConfirmed: {TotalConfirmed}</h4>
-            <h4>NewDeaths: {NewDeaths}</h4>
-            <h4>TotalDeaths: {TotalDeaths}</h4>
-            <h4>NewRecovered: {NewRecovered}</h4>
-            <h4>TotalRecovered: {TotalRecovered}</h4>
-            <h4>Date: {Date}</h4>
-        </div>
+        <>
+            <div className="grid">
+                <div className="row no-gutters">
+                    <div className="col l-2">
+                        <h3 style={{color: 'red'}}>Tên Nước: {Country}</h3>
+                        <h4>Số Ca Nhiễm Mới: {NewConfirmed}</h4>
+                        <h4>Tổng Ca Nhiễm: {TotalConfirmed}</h4>
+                        <h4>Số Ca Ngẻo Mới: {NewDeaths}</h4>
+                        <h4>Tổng Ca Ngẻo: {TotalDeaths}</h4>
+                        <h4>Số Ca Phục Hồi Mới: {NewRecovered}</h4>
+                        <h4>Tổng Số Ca Phục Hồi: {TotalRecovered}</h4>
+                        <h4>Date: {Date}</h4>
+                    </div>
+                    <div className="col l-10">
+                        <div className="row">
+                            <div className="chart__1 l-8">
+                                <Bar
+                                    data={{
+                                    labels: [
+                                        "Số Ca Nhiễm Mới",
+                                        "Tổng Ca Nhiễm",
+                                        "Số Ca Ngẻo Mới",
+                                        "Tổng Ca Ngẻo",
+                                        "Tổng Số Ca Phục Hồi",
+                                    ],
+                                    datasets: [
+                                        {
+                                        label: "NewConfirmed",
+                                       
+                                        backgroundColor: [
+                                            "#3e95cd",
+                                            "#8e5ea2",
+                                            "#3cba9f",
+                                            "#e8c3b9",
+                                            "#c45850"
+                                        ],
+                                        data: [NewConfirmed,TotalConfirmed, NewDeaths, TotalDeaths, TotalRecovered]
+                                        }
+                                    ]
+                                    }}
+                                    options={{
+                                    legend: { display: false },
+                                    title: {
+                                        display: true,
+                                        text: "Covid"
+                                    }
+                                    }}
+                                />
+                            </div>
+                            <div className="chart__2 l-4">
+                                <Doughnut
+                                    options={{
+                                        responsive: true,
+                                        maintainAspectRatio: true,
+                                        }}
+                                    data={{
+                                        labels: [
+                                            "Số Ca Nhiễm Mới",
+                                        "Tổng Ca Nhiễm",
+                                        "Số Ca Ngẻo Mới",
+                                        "Tổng Ca Ngẻo",
+                                        "Tổng Số Ca Phục Hồi",
+                                    ],
+                                    datasets: [
+                                        {
+                                        label: "Covid",
+                                        backgroundColor: [
+                                            "#3e95cd",
+                                            "#8e5ea2",
+                                            "#3cba9f",
+                                            "#e8c3b9",
+                                            "#c45850"
+                                        ],
+                                        data: [NewConfirmed,TotalConfirmed, NewDeaths, TotalDeaths, TotalRecovered]
+                                        }
+                                    ]
+                                    }}
+                                    option={{
+                                    title: {
+                                        display: true,
+                                        text: "Covid (millions) in 2050"
+                                    }
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </>
     )
 }
 

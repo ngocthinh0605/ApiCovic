@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import Covid from './components/Covid';
 import SearchBar from './components/SearchBar';
+import './app.css'
+import './Grid.css'
 
 function App() {
 
@@ -31,7 +33,7 @@ function App() {
   return (
     
     <div className="App">  
-          <h1>WorldMeter Api Coronavirus</h1>
+          <h1>Covid Trên Thế Giới</h1>
           <SearchBar 
             filterText = {filterText}
             onFilterTextChange={handleFilterTextChange}

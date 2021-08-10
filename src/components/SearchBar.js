@@ -10,11 +10,11 @@ const SearchBar = ({
     return (
         <div>
             <div>
-                <label>Search Country: </label>
+                <label>Nhập Tên Nước: </label>
             </div>
             <input
                 type='text'
-                placeholder='Search Country....'
+                placeholder='Nhập Tên Nước....'
                 value={filterText}
                 onChange={handleFilterTextChange}
             ></input>
