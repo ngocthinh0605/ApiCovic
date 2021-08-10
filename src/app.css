@@ -1,6 +1,8 @@
 input{
     font-size: 20px;
     border-radius:5px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 .container{
     border-bottom: 3px solid #ccc;
@@ -10,3 +12,12 @@ input{
 .container h4{
     text-align: left;
 }
+.loading{
+    display: flex;
+    margin-top: 30vh;
+
+
+}
+.loading h1{
+    margin: auto;
+    opacity: 0.5}
