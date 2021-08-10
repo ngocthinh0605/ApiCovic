@@ -10,7 +10,7 @@ const Covid = ({ datas, filterText }) => {
 
     const [count, setCount] = useState({
         prev: 0,
-        next: 10
+        next: 25
       })
       const [hasMore, setHasMore] = useState(true);
       const [current, setCurrent] = useState(datas.slice(count.prev, count.next))
@@ -20,9 +20,9 @@ const Covid = ({ datas, filterText }) => {
           return;
         }
         setTimeout(() => {
-          setCurrent(current.concat(datas.slice(count.prev + 10, count.next + 10)))
+          setCurrent(current.concat(datas.slice(count.prev + 25, count.next + 25)))
         }, 2000)
-        setCount((prevState) => ({ prev: prevState.prev + 10, next: prevState.next + 10 }))
+        setCount((prevState) => ({ prev: prevState.prev + 25, next: prevState.next + 25 }))
       }
 
     return (

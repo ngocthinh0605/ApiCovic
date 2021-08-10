@@ -14,12 +14,12 @@ const Country = ({country}) => {
                 <div className="row no-gutters">
                     <div className="col l-2 c-12">
                         <h3 style={{color: 'red'}}>Tên Nước: {Country}</h3>
-                        <h4>Số Ca Nhiễm Mới: {NewConfirmed}</h4>
-                        <h4>Tổng Ca Nhiễm: {TotalConfirmed}</h4>
-                        <h4>Số Ca Ngẻo Mới: {NewDeaths}</h4>
-                        <h4>Tổng Ca Ngẻo: {TotalDeaths}</h4>
-                        <h4>Số Ca Phục Hồi Mới: {NewRecovered}</h4>
-                        <h4>Tổng Số Ca Phục Hồi: {TotalRecovered}</h4>
+                        <h4>Số Ca Nhiễm Mới: {new Intl.NumberFormat('de-DE').format(NewConfirmed)}</h4>
+                        <h4>Tổng Ca Nhiễm: {new Intl.NumberFormat('de-DE').format(TotalConfirmed)}</h4>
+                        <h4>Số Ca Ngẻo Mới: {new Intl.NumberFormat('de-DE').format(NewDeaths)}</h4>
+                        <h4>Tổng Ca Ngẻo: {new Intl.NumberFormat('de-DE').format(TotalDeaths)}</h4>
+                        <h4>Số Ca Phục Hồi Mới: {new Intl.NumberFormat('de-DE').format(NewRecovered)}</h4>
+                        <h4>Tổng Số Ca Phục Hồi: {new Intl.NumberFormat('de-DE').format(TotalRecovered)}</h4>
                         <h4>Date: {Date}</h4>
                     </div>
                     <div className="col l-10 c-12">
