@@ -24,7 +24,7 @@ const Country = ({country}) => {
                     </div>
                     <div className="col l-10 c-12">
                         <div className="row">
-                            <div className="chart__1 l-8 ">
+                            <div className="chart__1 l-8 c-12 ">
                                 <Bar
                                     data={{
                                     labels: [
@@ -58,7 +58,7 @@ const Country = ({country}) => {
                                     }}
                                 />
                             </div>
-                            <div className="chart__2 l-4 ">
+                            <div className="chart__2 l-4 c-12 ">
                                 <Doughnut
                                     options={{
                                         responsive: true,
