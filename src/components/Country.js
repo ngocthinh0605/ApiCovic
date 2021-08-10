@@ -10,9 +10,9 @@ const Country = ({country}) => {
         Date} = country;
     return (
         <>
-            <div className="grid">
+            <div className="grid container">
                 <div className="row no-gutters">
-                    <div className="col l-2">
+                    <div className="col l-2 c-12">
                         <h3 style={{color: 'red'}}>Tên Nước: {Country}</h3>
                         <h4>Số Ca Nhiễm Mới: {NewConfirmed}</h4>
                         <h4>Tổng Ca Nhiễm: {TotalConfirmed}</h4>
@@ -22,9 +22,9 @@ const Country = ({country}) => {
                         <h4>Tổng Số Ca Phục Hồi: {TotalRecovered}</h4>
                         <h4>Date: {Date}</h4>
                     </div>
-                    <div className="col l-10">
+                    <div className="col l-10 c-12">
                         <div className="row">
-                            <div className="chart__1 l-8">
+                            <div className="chart__1 l-8 ">
                                 <Bar
                                     data={{
                                     labels: [
@@ -58,7 +58,7 @@ const Country = ({country}) => {
                                     }}
                                 />
                             </div>
-                            <div className="chart__2 l-4">
+                            <div className="chart__2 l-4 ">
                                 <Doughnut
                                     options={{
                                         responsive: true,

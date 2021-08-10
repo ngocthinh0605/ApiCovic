@@ -38,8 +38,12 @@ function App() {
             filterText = {filterText}
             onFilterTextChange={handleFilterTextChange}
           />
+          
         {
-          apiCovid.length !== 0 && <Covid datas = {apiCovid["Countries"] }  
+          apiCovid.length === 0 ? 
+            <div className="loading">
+              Loading....
+            </div> : <Covid datas = {apiCovid["Countries"] }  
                                       filterText={filterText}
                           />
           // <Covid datas = {apiCovid["Countries"]} />
