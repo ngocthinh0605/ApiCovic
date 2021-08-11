@@ -29,23 +29,23 @@ const Country = ({country}) => {
                                     data={{
                                     labels: [
                                         "Số Ca Nhiễm Mới",
-                                        "Tổng Ca Nhiễm",
+                                        // "Tổng Ca Nhiễm",
                                         "Số Ca Ngẻo Mới",
                                         "Tổng Ca Ngẻo",
                                         "Tổng Số Ca Phục Hồi",
                                     ],
                                     datasets: [
                                         {
-                                        label: "NewConfirmed",
+                                        label: "Số Ca Nhiễm Mới",
                                        
                                         backgroundColor: [
                                             "#3e95cd",
-                                            "#8e5ea2",
+                                            // "#8e5ea2",
                                             "#3cba9f",
                                             "#e8c3b9",
                                             "#c45850"
                                         ],
-                                        data: [NewConfirmed,TotalConfirmed, NewDeaths, TotalDeaths, TotalRecovered]
+                                        data: [NewConfirmed, NewDeaths, TotalDeaths, TotalRecovered]
                                         }
                                     ]
                                     }}
@@ -67,7 +67,7 @@ const Country = ({country}) => {
                                     data={{
                                         labels: [
                                             "Số Ca Nhiễm Mới",
-                                        "Tổng Ca Nhiễm",
+                                        // "Tổng Ca Nhiễm",
                                         "Số Ca Ngẻo Mới",
                                         "Tổng Ca Ngẻo",
                                         "Tổng Số Ca Phục Hồi",
@@ -77,19 +77,19 @@ const Country = ({country}) => {
                                         label: "Covid",
                                         backgroundColor: [
                                             "#3e95cd",
-                                            "#8e5ea2",
+                                            // "#8e5ea2",
                                             "#3cba9f",
                                             "#e8c3b9",
                                             "#c45850"
                                         ],
-                                        data: [NewConfirmed,TotalConfirmed, NewDeaths, TotalDeaths, TotalRecovered]
+                                        data: [NewConfirmed, NewDeaths, TotalDeaths, TotalRecovered]
                                         }
                                     ]
                                     }}
                                     option={{
                                     title: {
                                         display: true,
-                                        text: "Covid (millions) in 2050"
+                                        text: "Covid "
                                     }
                                     }}
                                 />

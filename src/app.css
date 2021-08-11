@@ -21,3 +21,15 @@ input{
 .loading h1{
     margin: auto;
     opacity: 0.5}
+
+.covid__global-left{
+    background-color: antiquewhite;
+}
+
+.covid__global-right{
+    background-color: azure;
+}
+.covid__in-the-world{
+    border-bottom: 5px solid #ccc;
+    margin-bottom: 50px;
+}

@@ -3,26 +3,37 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { useState } from 'react';
 
 const Covid = ({ datas, filterText }) => {
-    datas.forEach(data => {
-        if(data["Country"].indexOf(filterText) > -1){
-        }
-    })
 
-    const [count, setCount] = useState({
+  const [count, setCount] = useState({
         prev: 0,
-        next: 25
+        next: 15
       })
-      const [hasMore, setHasMore] = useState(true);
-      const [current, setCurrent] = useState(datas.slice(count.prev, count.next))
+    const [hasMore, setHasMore] = useState(true);
+    const [current, setCurrent] = useState(datas.slice(count.prev, count.next));
+    const [filter, setFilter] = useState([]);
+
+    var arrayFilter = [];  
+
+    if(filterText !== ''){
+    
+      // eslint-disable-next-line
+      const filter = datas.filter((data) => {
+            if(data["Country"].indexOf(filterText) > -1){
+              return data;
+            }
+          })
+
+      arrayFilter = filter;
+    }
       const getMoreData = () => {
-        if (current.length === datas.length) {
+        if (current.length === datas.length || arrayFilter.length !== 0 ) {
           setHasMore(false);
           return;
         }
         setTimeout(() => {
-          setCurrent(current.concat(datas.slice(count.prev + 25, count.next + 25)))
+          setCurrent(current.concat(datas.slice(count.prev + 15, count.next + 15)))
         }, 2000)
-        setCount((prevState) => ({ prev: prevState.prev + 25, next: prevState.next + 25 }))
+        setCount((prevState) => ({ prev: prevState.prev + 15, next: prevState.next + 15 }))
       }
 
     return (
@@ -35,13 +46,8 @@ const Covid = ({ datas, filterText }) => {
             >
             {
                 // eslint-disable-next-line
-                current.map((data) => {
-                    if(filterText === ''){
-                            return <Country key={data.ID} country={data}></Country>
-                        }else if(data["Country"].indexOf(filterText) > -1){
-                            return <Country key={data.ID} country={data}></Country>
-                        }
-                })
+                arrayFilter.length === 0 ? current.map((data) => <Country key={data.ID} country={data}></Country>) : arrayFilter.map((data) => <Country key={data.ID} country={data}></Country>)
+                
             }
             </InfiniteScroll>
         </>
