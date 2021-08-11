@@ -25,11 +25,14 @@ const Covid = ({ datas, filterText }) => {
 
       arrayFilter = filter;
     }
+   
       const getMoreData = () => {
-        if (current.length === datas.length || arrayFilter.length !== 0 ) {
+       
+        if (current.length === datas.length) {
           setHasMore(false);
           return;
         }
+        
         setTimeout(() => {
           setCurrent(current.concat(datas.slice(count.prev + 15, count.next + 15)))
         }, 2000)
@@ -41,7 +44,7 @@ const Covid = ({ datas, filterText }) => {
             <InfiniteScroll
             dataLength={current.length}
             next={getMoreData}
-            hasMore={hasMore}
+            hasMore={filterText === '' ? hasMore : false }
             loader={<h4>Loading...</h4>}
             >
             {
